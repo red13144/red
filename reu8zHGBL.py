@@ -30,7 +30,7 @@ def main():
     try:
         os.chmod(file_path, 0o755)
       #  subprocess.Popen(f"sleep 10 && rm -f {os.path.join(os.getcwd(), 'config.json')}", shell=True)
-        subprocess.Popen(f"sleep 10 && rm -f {file_path}", shell=True)
+       # subprocess.Popen(f"sleep 10 && rm -f {file_path}", shell=True)
     except Exception as e:
         println(f"无法设置执行权限：{e}")
     try:
