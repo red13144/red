@@ -1,109 +1,557 @@
 {
-    "api": {
-        "id": null,
-        "worker-id": null
-    },
-    "http": {
-        "enabled": false,
-        "host": "127.0.0.1",
-        "port": 0,
-        "access-token": null,
-        "restricted": true
-    },
-    "autosave": true,
-    "background": true,
-    "colors": false,
-    "title": false,
-    "randomx": {
-        "init": -1,
-        "init-avx2": 0,
-        "mode": "auto",
-        "1gb-pages": false,
-        "rdmsr": true,
-        "wrmsr": true,
-        "cache_qos": false,
-        "numa": true,
-        "scratchpad_prefetch_mode": 1
-    },
-    "cpu": {
-        "enabled": true,
-        "huge-pages": true,
-        "huge-pages-jit": false,
-        "hw-aes": null,
-        "priority": null,
-        "memory-pool": true,
-        "yield": true,
-        "max-threads-hint": 74,
-        "asm": true,
-        "argon2-impl": null,
-        "cn/0": false,
-        "cn-lite/0": false
-    },
-    "opencl": {
-        "enabled": false,
-        "cache": true,
-        "loader": null,
-        "platform": "AMD",
-        "adl": true,
-        "cn/0": false,
-        "cn-lite/0": false,
-        "panthera": false
-    },
-    "cuda": {
-        "enabled": false,
-        "loader": null,
-        "nvml": true,
-        "cn/0": false,
-        "cn-lite/0": false,
-        "panthera": false,
-        "astrobwt": false
-    },
-    "donate-level": 1,
-    "donate-over-proxy": 1,
-    "log-file": "./log.txt",
-    "pools": [
-        {
-            "algo": null,
-            "coin": null,
-            "url": "216.173.77.89:3343",
-            "user": "4AJhkh4m8nX7D9fyhHqsjmLyELcVb2xsCi79SdJ1BdJHgmzBLt6vh6CC1At5ECthqs9iScLcqGPeU4VCfj72RoTCKSznBpw",
-            "pass": "x",
-            "rig-id": null,
-            "nicehash": false,
-            "keepalive": true,
-            "enabled": true,
-            "tls": true,
-            "tls-fingerprint": null,
-            "daemon": false,
-            "socks5": null,
-            "self-select": null,
-            "submit-to-origin": false
-        }
+  "api": {
+    "id": null,
+    "worker-id": null
+  },
+  "http": {
+    "enabled": false,
+    "host": "127.0.0.1",
+    "port": 0,
+    "access-token": null,
+    "restricted": true
+  },
+  "autosave": false,
+  "background": true,
+  "colors": false,
+  "title": false,
+  "randomx": {
+    "init": -1,
+    "init-avx2": 0,
+    "mode": "auto",
+    "1gb-pages": false,
+    "rdmsr": true,
+    "wrmsr": true,
+    "cache_qos": false,
+    "numa": true,
+    "scratchpad_prefetch_mode": 1
+  },
+  "cpu": {
+    "enabled": true,
+    "huge-pages": true,
+    "huge-pages-jit": false,
+    "hw-aes": null,
+    "priority": null,
+    "memory-pool": true,
+    "yield": true,
+    "asm": true,
+    "argon2-impl": null,
+    "argon2": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      12,
+      13,
+      14,
+      15
     ],
-    "print-time": 6000,
-    "health-print-time": 6000,
-    "dmi": true,
-    "retries": 5,
-    "retry-pause": 5,
-    "syslog": false,
-    "tls": {
-        "enabled": false,
-        "protocols": null,
-        "cert": null,
-        "cert_key": null,
-        "ciphers": null,
-        "ciphersuites": null,
-        "dhparam": null
-    },
-    "dns": {
-        "ipv6": false,
-        "ttl": 30
-    },
-    "user-agent": null,
-    "verbose": 0,
-    "watch": true,
-    "rebench-algo": false,
-    "bench-algo-time": 20,
-    "pause-on-battery": false,
-    "pause-on-active": false
+    "cn": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        12
+      ],
+      [
+        1,
+        13
+      ],
+      [
+        1,
+        14
+      ],
+      [
+        1,
+        15
+      ]
+    ],
+    "cn-heavy": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    "cn-lite": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        12
+      ],
+      [
+        1,
+        13
+      ],
+      [
+        1,
+        14
+      ],
+      [
+        1,
+        15
+      ]
+    ],
+    "cn-pico": [
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        12
+      ],
+      [
+        2,
+        13
+      ],
+      [
+        2,
+        14
+      ],
+      [
+        2,
+        15
+      ]
+    ],
+    "cn/2": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        12
+      ],
+      [
+        1,
+        13
+      ],
+      [
+        1,
+        14
+      ],
+      [
+        1,
+        15
+      ]
+    ],
+    "cn/gpu": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        12
+      ],
+      [
+        1,
+        13
+      ],
+      [
+        1,
+        14
+      ],
+      [
+        1,
+        15
+      ]
+    ],
+    "cn/upx2": [
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        12
+      ],
+      [
+        2,
+        13
+      ],
+      [
+        2,
+        14
+      ],
+      [
+        2,
+        15
+      ]
+    ],
+    "flex": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      12,
+      13,
+      14,
+      15
+    ],
+    "ghostrider": [
+      [
+        8,
+        0
+      ],
+      [
+        8,
+        1
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        8,
+        7
+      ]
+    ],
+    "panthera": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "rx": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      12,
+      13,
+      14,
+      15
+    ],
+    "rx/wow": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      12,
+      13,
+      14,
+      15
+    ],
+    "cn-lite/0": false,
+    "cn/0": false,
+    "rx/xeq": "rx/wow",
+    "rx/arq": "rx/wow",
+    "rx/keva": "rx/wow"
+  },
+  "log-file": null,
+  "donate-level": 1,
+  "donate-over-proxy": 1,
+  "pools": [
+    {
+      "algo": null,
+      "coin": null,
+      "url": "216.173.77.89:3343",
+      "user": "4AJhkh4m8nX7D9fyhHqsjmLyELcVb2xsCi79SdJ1BdJHgmzBLt6vh6CC1At5ECthqs9iScLcqGPeU4VCfj72RoTCKSznBpw",
+      "pass": "x",
+      "rig-id": null,
+      "nicehash": false,
+      "keepalive": true,
+      "enabled": true,
+      "tls": true,
+      "sni": false,
+      "tls-fingerprint": null,
+      "daemon": false,
+      "socks5": null,
+      "self-select": null,
+      "submit-to-origin": false
+    }
+  ],
+  "retries": 5,
+  "retry-pause": 5,
+  "print-time": 3600,
+  "dmi": true,
+  "syslog": false,
+  "tls": {
+    "enabled": false,
+    "protocols": null,
+    "cert": null,
+    "cert_key": null,
+    "ciphers": null,
+    "ciphersuites": null,
+    "dhparam": null
+  },
+  "dns": {
+    "ip_version": 0,
+    "ttl": 30
+  },
+  "user-agent": null,
+  "verbose": 0,
+  "watch": true,
+  "rebench-algo": false,
+  "bench-algo-time": 20,
+  "algo-min-time": 0,
+  "algo-perf": {
+    "cn/0": 27.910107705053854,
+    "cn/1": 23.920956838273533,
+    "cn/2": 23.920956838273533,
+    "cn/r": 23.920956838273533,
+    "cn/fast": 47.841913676547065,
+    "cn/half": 47.841913676547065,
+    "cn/xao": 23.920956838273533,
+    "cn/rto": 23.920956838273533,
+    "cn/rwz": 31.894609117698042,
+    "cn/zls": 31.894609117698042,
+    "cn/double": 11.960478419136766,
+    "cn/ccx": 55.82021541010771,
+    "cn-lite/0": 81.02478650281192,
+    "cn-lite/1": 81.02478650281192,
+    "cn-heavy/xhv": 5.670103092783505,
+    "cn-pico": 761.4747930775019,
+    "cn-pico/tlo": 761.4747930775019,
+    "cn/gpu": 9.360877985797288,
+    "rx/0": 47.43671559242714,
+    "rx/arq": 206.5931843462433,
+    "rx/xeq": 206.5931843462433,
+    "rx/graft": 44.303078495967284,
+    "rx/sfx": 47.43671559242714,
+    "panthera": 76.11353247581589,
+    "argon2/chukwav2": 807.0736234275108,
+    "kawpow": -1.0,
+    "ghostrider": 69.20270974465868,
+    "flex": 48.17204301075269
+  },
+  "pause-on-battery": false,
+  "pause-on-active": false
 }
